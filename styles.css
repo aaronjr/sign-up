@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
-*{
-    margin: 0;
+
+* {
+    margin: 0px;
     padding: 0;
-    font-family:'Titillium Web', sans-serif;;
+    font-family:'Titillium Web', sans-serif;
+
 }
 :root{
     --back-color: rgba(160, 77, 77, 0.799);
@@ -34,7 +36,7 @@ body{
 .right{
     width: 60%;
     display: grid;
-    grid-template-rows: repeat(1fr, 3);
+    grid-template-rows: repeat(3, 1fr);
 }
 .top, .middle, .bottom{
     width: 100%;
@@ -47,16 +49,16 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    height: 33%;
 }
 
 .why-text{
     font-weight: 600;
-    font-size: x-large;
-    line-height: 2rem;
-    padding: 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    padding: 0 2rem .5rem 2rem;
 }
 .cheeky{
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: 0 2rem 1rem 2rem;
 }
