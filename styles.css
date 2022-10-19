@@ -41,9 +41,6 @@ body{
 .top, .middle, .bottom{
     width: 100%;
 }
-.middle{
-    background-color: white;
-}
 
 .top{
     display: flex;
@@ -61,4 +58,18 @@ body{
     font-weight: 600;
     font-size: 1rem;
     padding: 0 2rem 1rem 2rem;
+}
+
+.middle{
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 5px rgba(230, 229, 229, 0.818);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
 }

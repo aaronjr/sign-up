@@ -16,10 +16,20 @@
         <div class="right">
             <div class="top">
                 <p class="why-text">Sign up below to get exclusive discounts on: <br> Wine, tasting days, hampers and seasonal gifts.</p>
-                <p class="cheeky">You <em>know</em> you want to!</p>
+                <p class="cheeky">You <em>know</em> you want to.</p>
             </div>
             <div class="middle">
                 <form action="..." method="post">
+                    <label for="name">Full name</label>
+                    <input name="name" id="name" type="text" autofocus required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="number">Phone number</label>
+                    <input type="number" name="number" id="number" min="11" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <label for="confirm">Confirm password</label>
+                    <input type="password" name="confirm" id="confirm">
 
                 </form>
             </div>
