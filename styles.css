@@ -73,3 +73,24 @@ form{
     flex-direction: column;
     padding-left: 2rem;
 }
+
+.bottom{
+
+}
+
+button{
+ margin: 2rem 2rem 0 2rem;
+ padding: 1rem 3rem;
+ border-radius: .5rem;
+ color: var(--back-color);
+ background-color: white;
+ font-weight: 600;
+ font-size: 1rem;
+}
+button:hover{
+    cursor: pointer;
+}
+.already{
+    margin: 2rem;
+    margin-top: .5rem;
+}
