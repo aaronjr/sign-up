@@ -7,7 +7,9 @@
 
 }
 :root{
-    --back-color: rgba(160, 77, 77, 0.799);
+    --back-color: rgba(214, 234, 215, 0.799);
+    --error: rgb(199, 61, 61);
+    --valid: rgb(22, 117, 22);
 }
 body{
     height: 100vh;
@@ -65,7 +67,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0px 5px rgba(230, 229, 229, 0.818);
+    box-shadow: 0px 5px 10px rgba(230, 229, 229, 0.818);
 }
 
 form{
@@ -117,11 +119,13 @@ button{
  margin: 2rem 2rem 0 2rem;
  padding: .8rem 2rem;
  border-radius: .5rem;
- color: var(--back-color);
  background-color: white;
  font-weight: 600;
  font-size: 1rem;
+ border: none;
+ box-shadow: 2px 2px 10px lightgray;
 }
+
 button:hover{
     cursor: pointer;
 }

@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     inputs.forEach(element => {
        element.addEventListener('blur', () =>{
             element.checkValidity() ? 
-                element.style.borderColor = "green" : 
-                element.style.borderColor = "red"
+                element.style.borderColor = "var(--valid)" : 
+                element.style.borderColor = "var(--error)"
        })
     });
 
@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     pass.forEach(element => {
         element.addEventListener('keyup',()=>{
             if(element.value !== "" && password.value === confirm.value){
-                password.style.borderColor = "green"
-                confirm.style.borderColor = "green"
+                password.style.borderColor = "var(--valid)"
+                confirm.style.borderColor = "var(--valid)"
             } 
             else{
-                password.style.borderColor = "red"
-                confirm.style.borderColor = "red"
+                password.style.borderColor = "var(--error)"
+                confirm.style.borderColor = "var(--error)"
             }
         })
     })
@@ -50,6 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // if input is younger, make border red else green
     dob.addEventListener('change', ()=>{
-        dob.value > youngest ? dob.style.borderColor = "red" : dob.style.borderColor = "green"
+        dob.value > youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
     })
 })
