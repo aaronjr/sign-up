@@ -72,6 +72,10 @@ form{
     padding-left: 2rem;
 }
 
+input, label {
+    display:block;
+}
+
 input{
     border: 2px rgb(66, 66, 66) solid;
     width: 10rem;
