@@ -20,25 +20,36 @@
             </div>
             <div class="middle">
                 <form action="..." method="post" id="sign-up">
-                    <fieldset>
-                        <label for="name">Full name</label>
-                        <input name="name" id="name" type="text" autofocus required>
-                        <label for="dob">Date of birth</label>
-                        <input name="dob" id="dob" type="date" required>
-                    </fieldset> 
-                    <fieldset>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
-                        <label for="number">Phone number</label>
-                        <input type="number" name="number" id="number" min="11" required>
-                    </fieldset>
-                    <fieldset>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <label for="confirm">Confirm password</label>
-                    </fieldset>
-                    <input type="password" name="confirm" id="confirm">
-
+                    <div class="wrapper">
+                        <div class="section">
+                            <label for="name">Full name</label>
+                            <input name="name" id="name" type="text" autofocus required>
+                        </div>
+                        <div class="section">
+                            <label for="dob">Date of birth</label>
+                            <input name="dob" id="dob" type="date" required>
+                        </div>
+                    </div> 
+                    <div class="wrapper">
+                        <div class="section">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="section">
+                            <label for="number">Phone number</label>
+                            <input type="number" name="number" id="number" min="11" required>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="section">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                        <div class="section">
+                            <label for="confirm">Confirm password</label>
+                            <input type="password" name="confirm" id="confirm" required>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="bottom">
