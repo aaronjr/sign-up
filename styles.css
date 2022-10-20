@@ -69,8 +69,6 @@ body{
 }
 
 form{
-    display: flex;
-    flex-direction: column;
     padding-left: 2rem;
 }
 
@@ -81,6 +79,7 @@ input{
     padding-left: .5rem;
     font-family:'Titillium Web', sans-serif;;
 }
+
 textarea:focus, 
 input:focus, 
 input[type]:focus, 
@@ -89,8 +88,8 @@ input[type]:focus,
     outline: 0 none;
 }
 
-.bottom{
-
+fieldset{
+    border: none;
 }
 
 button{

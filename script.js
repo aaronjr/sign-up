@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     // get items from form
     let name = document.querySelector('#name')
     let email = document.querySelector('#email')
@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // for each one, add a checker and change background color
     inputs.forEach(element => {
        element.addEventListener('blur', () =>{
-            element.checkValidity() ? element.style.borderColor = "green" : element.style.borderColor = "red"
+            element.checkValidity() ? 
+                element.style.borderColor = "green" : 
+                element.style.borderColor = "red"
        })
     });
 
@@ -42,9 +44,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // Create date thats 18 years old.
     date = new Date()
     let thisMonth = (date.getMonth().length != 1) ? `0${date.getMonth()}` : date.getMonth();
-    thisDay = (date.getDay().length != 1) ? `0${date.getDay()}` : date.getDay()
-    compareYear = date.getFullYear() - 18
-    youngest = `${compareYear}-${thisMonth}-${thisDay}`
+    let thisDay = (date.getDay().length != 1) ? `0${date.getDay()}` : date.getDay()
+    let compareYear = date.getFullYear() - 18
+    let youngest = `${compareYear}-${thisMonth}-${thisDay}`
 
     // if input is younger, make border red else green
     dob.addEventListener('change', ()=>{
