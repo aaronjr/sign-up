@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // for each one, add a checker and change background color
     inputs.forEach(element => {
-       element.addEventListener('blur', () =>{
+       element.addEventListener('blur', () => {
             element.checkValidity() ? 
                 element.style.borderColor = "var(--valid)" : 
                 element.style.borderColor = "var(--error)"
        })
     });
-
+    
     // get both password fields
     let password = document.querySelector('#password')
     let confirm = document.querySelector('#confirm')
@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // if input is younger, make border red else green
     dob.addEventListener('change', ()=>{
-        console.log(youngest)
-        console.log(dob.value)
         dob.value > youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
     })
 })
