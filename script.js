@@ -82,16 +82,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let thisDay = (date.getUTCDate().length != 1) ? date.getUTCDate() : `0${date.getUTCDate()}` ;
     let compareYear = date.getFullYear() - 18
     let youngest = `${compareYear}-${thisMonth}-${thisDay}`
-    
+    let formValidate = `${thisDay}-${thisMonth}-${compareYear}`
+    dob.setAttribute("min", formValidate)
 
     // if input is younger, make border red else green
-    dob.addEventListener('change', ()=>{
-        dob.value >= youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
+    dob.addEventListener('change', () => {
+        if(dob.value >= youngest){
+            dob.style.borderColor = "var(--error)"
+            dob.setCustomValidity('Must be over 18')
+            dob.reportValidity(); 
+        }
+        else{
+            dob.style.borderColor = "var(--valid)"  
+            dob.setCustomValidity('')
+            dob.reportValidity(); 
+        }
     })
 
     // Alert on succesful form submition 
     form = document.querySelector('form')
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', () => {
        alert("Sign up complete.")
     })
 })
