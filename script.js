@@ -10,14 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // for each one, add a checker and change background color
     inputs.forEach(element => {
        element.addEventListener('blur', () => {
+            // change color
             if(element.checkValidity()){
                 element.style.borderColor = "var(--valid)"; 
             }
+            // change color and return appropriate error message.
             else{
                 element.style.borderColor = "var(--error)";
                 switch(element.name){
                     case "name":
-                        console.log("HERE")
                         element.setCustomValidity("Please enter a name")
                         break
                     case "email":
@@ -32,15 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
        })
     });
 
+    // check for change and remove validity nmessage
     inputs.forEach(element => {
-        element.addEventListener('onchange', () => {
-            console.log("CHANGE")
+        element.addEventListener('change', () => {
             element.setCustomValidity('')
             element.reportValidity(); 
         })
     })
-
-    
 
     // get both password fields
     let password = document.querySelector('#password')
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // on keyup, check not blank and if match make border green else red. 
     pass.forEach(element => {
         element.addEventListener('keyup',()=>{
-            if(element.value !== "" && password.value === confirm.value){
+            if(element.value !== "" && password.value == confirm.value){
                 password.style.borderColor = "var(--valid)"
                 confirm.style.borderColor = "var(--valid)"
             } 
@@ -62,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.setCustomValidity('Passwords do not match')
                 element.reportValidity(); 
             }
+        })
+    })
+
+    // check for change and remove validity nmessage
+    pass.forEach(element => {
+        element.addEventListener('change',()=>{
+            element.setCustomValidity('')
+            element.reportValidity(); 
         })
     })
 
@@ -82,9 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         dob.value >= youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
     })
 
+    // Alert on succesful form submition 
     form = document.querySelector('form')
-    
-    form.addEventListener('onsubmit', ()=>{
-        console.log("submit")
+    form.addEventListener('submit', (event) => {
+       alert("Sign up complete.")
     })
 })
