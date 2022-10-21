@@ -43,13 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create date thats 18 years old.
     date = new Date()
-    let thisMonth = (date.getMonth().length != 1) ? `0${date.getMonth()}` : date.getMonth();
-    let thisDay = (date.getDay().length != 1) ? `0${date.getDay()}` : date.getDay()
+    let thisMonth = (date.getMonth().length != 1) ? date.getMonth() + 1 : `0${date.getMonth() + 1}`;
+    let thisDay = (date.getUTCDate().length != 1) ? date.getUTCDate() : `0${date.getUTCDate()}` ;
     let compareYear = date.getFullYear() - 18
     let youngest = `${compareYear}-${thisMonth}-${thisDay}`
+    
 
     // if input is younger, make border red else green
     dob.addEventListener('change', ()=>{
+        console.log(youngest)
+        console.log(dob.value)
         dob.value > youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
     })
 })
