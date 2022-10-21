@@ -10,12 +10,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // for each one, add a checker and change background color
     inputs.forEach(element => {
        element.addEventListener('blur', () => {
-            element.checkValidity() ? 
-                element.style.borderColor = "var(--valid)" : 
-                element.style.borderColor = "var(--error)"
+            if(element.checkValidity()){
+                element.style.borderColor = "var(--valid)"; 
+            }
+            else{
+                element.style.borderColor = "var(--error)";
+                switch(element.name){
+                    case "name":
+                        console.log("HERE")
+                        element.setCustomValidity("Please enter a name")
+                        break
+                    case "email":
+                        element.setCustomValidity("Please enter a valid email address")
+                        break
+                    case "number":
+                        element.setCustomValidity("Please enter a valid UK mobile number")
+                        break
+                }   
+                element.reportValidity();  
+            }
        })
     });
+
+    inputs.forEach(element => {
+        element.addEventListener('onchange', () => {
+            console.log("CHANGE")
+            element.setCustomValidity('')
+            element.reportValidity(); 
+        })
+    })
+
     
+
     // get both password fields
     let password = document.querySelector('#password')
     let confirm = document.querySelector('#confirm')
@@ -33,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 password.style.borderColor = "var(--error)"
                 confirm.style.borderColor = "var(--error)"
+                element.setCustomValidity('Passwords do not match')
+                element.reportValidity(); 
             }
         })
     })
@@ -51,6 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // if input is younger, make border red else green
     dob.addEventListener('change', ()=>{
-        dob.value > youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
+        dob.value >= youngest ? dob.style.borderColor = "var(--error)" : dob.style.borderColor = "var(--valid)"
+    })
+
+    form = document.querySelector('form')
+    
+    form.addEventListener('onsubmit', ()=>{
+        console.log("submit")
     })
 })

@@ -29,21 +29,21 @@
                     <div class="wrapper">
                         <div class="section">
                             <label for="name">Full name</label>
-                            <input name="name" id="name" type="text" required>
+                            <input name="name" id="name" type="text" onchange="this.setCustomValidity('')" required>
                         </div>
                         <div class="section">
                             <label for="dob">Date of birth</label>
-                            <input name="dob" id="dob" type="date" required>
+                            <input name="dob" id="dob" type="date" onchange="this.setCustomValidity('')" required>
                         </div>
                     </div> 
                     <div class="wrapper">
                         <div class="section">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" onchange="this.setCustomValidity('')" required>
                         </div>
                         <div class="section">
                             <label for="number">Phone number</label>
-                            <input type="number" name="number" id="number" min="11" required>
+                            <input type="number" name="number" id="number" min="11" onchange="this.setCustomValidity('')" required>
                         </div>
                     </div>
                     <div class="wrapper">
