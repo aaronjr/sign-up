@@ -42,35 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // get both password fields
-    let password = document.querySelector('#password')
-    let confirm = document.querySelector('#confirm')
+    const password = document.querySelector('#password')
+    const confirm = document.querySelector('#confirm')
 
-    // add to list
-    let pass = [password, confirm]
+    function check(other){
+        if(this.value == ""){
+            password.style.borderColor = "var(--error)"
+            confirm.style.borderColor = "var(--error)"
+            this.setCustomValidity("Must enter a password");
+            this.reportValidity();
+        } else if(this.value !== other.value){
+            console.log(this.value, other.value)
+            password.style.borderColor = "var(--error)"
+            confirm.style.borderColor = "var(--error)"
+            this.setCustomValidity("Passwords do not match!");
+            this.reportValidity();
+        } else if (this.value == other.value) {
+            console.log(this.value, other.value)
+            this.setCustomValidity("");
+            other.setCustomValidity("");
+            this.reportValidity();
+            password.style.borderColor = "var(--valid)"
+            confirm.style.borderColor = "var(--valid)"
+        }
+    }
 
     // on keyup, check not blank and if match make border green else red. 
-    pass.forEach(element => {
-        element.addEventListener('keyup',()=>{
-            if(element.value !== "" && password.value == confirm.value){
-                password.style.borderColor = "var(--valid)"
-                confirm.style.borderColor = "var(--valid)"
-            } 
-            else{
-                password.style.borderColor = "var(--error)"
-                confirm.style.borderColor = "var(--error)"
-                element.setCustomValidity('Passwords do not match')
-                element.reportValidity(); 
-            }
-        })
-    })
-
-    // check for change and remove validity nmessage
-    pass.forEach(element => {
-        element.addEventListener('change',()=>{
-            element.setCustomValidity('')
-            element.reportValidity(); 
-        })
-    })
+    password.addEventListener('keyup', check.bind(password, confirm))
+    confirm.addEventListener('keyup', check.bind(confirm, password))
 
     // check if user over 18.
     // get dob input
@@ -102,6 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Alert on succesful form submition 
     form = document.querySelector('form')
     form.addEventListener('submit', () => {
-       alert("Sign up complete.")
+        if(!form.checkValidity()){
+            form.preventDefault()
+        } else {
+            alert("Sign up complete.")
+            form.preventDefault()
+        }
+       
     })
 })
